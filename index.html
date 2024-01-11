@@ -1,2 +1,51 @@
+<button id='runaway-btn'>Click Me &#129315;</button>
+<style>
+  * {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  user-select: none;
+}
 
-<p>Hi.. I am </p>Testing......... @Rakib
+body {
+  background-color: rgb(31, 31, 31);
+}
+
+button {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 4rem;
+  width: 10rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 1px 1px 5px black;
+  background-color: white;
+}
+</style>
+<script>
+  const button = document.getElementById("runaway-btn");
+
+const animateMove = (element, prop, pixels) =>
+  anime({
+    targets: element,
+    [prop]: `${pixels}px`,
+    easing: "easeOutCirc"
+  });
+
+["mouseover", "click"].forEach(function (el) {
+  button.addEventListener(el, function (event) {
+    const top = getRandomNumber(window.innerHeight - this.offsetHeight);
+    const left = getRandomNumber(window.innerWidth - this.offsetWidth);
+
+    animateMove(this, "left", left).play();
+    animateMove(this, "top", top).play();
+  });
+});
+
+const getRandomNumber = (num) => {
+  return Math.floor(Math.random() * (num + 1));
+};
+</script>
