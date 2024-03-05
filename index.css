@@ -1,0 +1,57 @@
+.leading-8 {
+    line-height: 2rem;
+}
+
+.rounded-4xl {
+    border-radius: 2rem; /* 24px */
+}
+
+.rounded-5xl {
+    border-radius: 2.5rem; /* 24px */
+}
+
+.rounded-6xl {
+    border-radius: 3rem; /* 24px */
+}
+
+.rounded-7xl {
+    border-radius: 3.5rem; /* 24px */
+}
+
+.rounded-8xl {
+    border-radius: 3.5rem; /* 24px */
+}
+
+.scale-102:hover {
+    transform: scale(1.02);
+}
+
+
+/**
+Scrollbar
+ */
+
+.scrollbar {
+    height: 300px;
+    width: 50%;
+    overflow: auto;
+    padding: 0 10px;
+}
+
+/*       ScrollBar 1        */
+
+body::-webkit-scrollbar {
+    width: 9px;
+}
+
+body::-webkit-scrollbar-track {
+    border-radius: 58px;
+    height: 18px;
+    background-color: rgba(252, 250, 250, 0.85);
+}
+
+body::-webkit-scrollbar-thumb {
+    border-radius: 118px;
+    height: 18px;
+    background-color: rgba(59, 63, 72, 0.85);
+}

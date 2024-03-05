@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html class="scroll-smooth" lang="">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+            type="text/javascript"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"
+            type="text/javascript"></script>
+
+
+    <script src="index.js" type="text/javascript"></script>
+    <link href="index.css" rel="stylesheet">
+
+    <title>Rakib's Portfolio</title>
+</head>
+<body class="bg-gray-200">
+<!-- Navbar -->
+<nav class="z-[9999] fixed flex flex-row justify-center p-1.5 font-semibold gap-5 top-0 left-1/2
+h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg
+ shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full
+  dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
+     style="opacity: 1; transform: translateX(-50%) translateY(0px) translateZ(0px);">
+    <a class="nav-link hover:bg-gray-500 bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-400"
+       href="#home"
+       id="homeLink">Home</a>
+    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+       href="#about"
+       id="aboutLink">About</a>
+    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+       href="#projects"
+       id="projectsLink">Projects</a>
+    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+       href="#skills"
+       id="skillsLink">Skills</a>
+    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+       href="#experience"
+       id="experienceLink">Experience</a>
+    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+       href="#contact"
+       id="contactLink">Contact</a>
+</nav>
+
+
+<section class="pt-36 flex justify-center" id="home">
+
+    <div class="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
+        <!-- Image -->
+        <div class="flex justify-center">
+            <img alt="rakib-hasan-455 image(Rakibul Hasan)"
+                 class="h-24 w-24 rounded-full border-4  border-cyan-50 outline-4 ring-2 ring-blue-200"
+                 src="/resources/image/rakib-hasan-455.jpg">
+        </div>
+        <h1 class="mb-10 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+            style="opacity: 1; transform: none;">
+            <span class="font-bold">Hello, I'm Rakib.</span> I'm a<!-- -->
+            <span class="font-bold">Software Developer</span> with<!-- -->
+            <span class="font-bold">1 years</span> of experience. I enjoy building<!-- -->
+            <span class="italic">sites, apps &amp; play with Full Stack Development using Spring Framework, Angular etc.</span>
+            My primary focus is on <span class="underline">Java</span>.</h1>
+
+        <div class="flex flex-col sm:flex-row items-center justify-center gap-4 px-4 text-lg font-medium" style="opacity: 1;
+         transform: none;">
+            <a class="group bg-gray-900 text-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110
+             hover:scale-110 hover:bg-gray-950 active:scale-105 transition" href="#contact">
+                Contact me here<!-- -->
+                <svg class="opacity-70 group-hover:translate-x-1 transition" fill="currentColor" height="1em"
+                     stroke="currentColor"
+                     stroke-width="0" viewBox="0 0 16 16" width="1em"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z"
+                          fill-rule="evenodd"></path>
+                </svg>
+            </a>
+
+            <a class="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer border-[1px] border-slate-400"
+               download="" href="resources/pdf/Rakibul_Hasan_Resume.pdf">Download CV<!-- -->
+                <svg aria-hidden="true" class="opacity-60 group-hover:translate-y-1 transition" fill="currentColor"
+                     height="1em" stroke="currentColor"
+                     stroke-width="0" viewBox="0 0 20 20" width="1em"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd"
+                          d="M3 17a1 1 0 011-1h12a1 1 0 110 2H4a1 1 0 01-1-1zm3.293-7.707a1 1 0 011.414 0L9 10.586V3a1 1 0 112 0v7.586l1.293-1.293a1 1 0 111.414 1.414l-3 3a1 1 0 01-1.414 0l-3-3a1 1 0 010-1.414z"
+                          fill-rule="evenodd"></path>
+                </svg>
+            </a>
+            <a class="bg-white p-4 text-gray-700 hover:text-gray-950 flex items-center gap-2 rounded-full focus:scale-[1.15] hover:scale-[1.15] active:scale-105 transition cursor-pointer border-[1px] border-slate-300"
+               href="https://www.linkedin.com/in/Rakibul-Hasan-0455/" target="_blank">
+                <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0" viewBox="0 0 16 16"
+                     width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"></path>
+                </svg>
+            </a>
+            <a class="bg-white p-4 text-gray-700 flex items-center gap-2 text-[1.35rem] rounded-full focus:scale-[1.15] hover:scale-[1.15] hover:text-gray-950 active:scale-105 transition cursor-pointer border-[1px] border-slate-300 "
+               href="https://github.com/Rakib-Hasan-455/" target="_blank">
+                <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0" viewBox="0 0 448 512"
+                     width="1em" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5 0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7 37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7 17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1 22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6 22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5 18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5 8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1 73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2 1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4 0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1 1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9 1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9 4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6 1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z"></path>
+                </svg>
+            </a></div>
+
+    </div>
+</section>
+<section class="pt-36 flex justify-center" id="about">
+    <div class="mb-28 max-w-[45rem] text-center sm:mb-0 scroll-mt-[100rem]  leading-8 ">
+        <div class="text-3xl font-medium capitalize mb-8 text-center">About me</div>
+
+        <div class=" text-center mb-3">
+            After graduating with a degree in Computer Science from Southeast University,
+            I decided to pursue my passion for programming. In my undergraduate life,
+            I worked on Angular, Spring Framework, UMS project focusing on solving
+            different problems of the university at Office of IT.
+            I am familiar with html, css, javascript, typeScript, tailwind, thymeleaf etc.
+            My favorite part of programming is the problem-solving aspect, particularly in the
+            Backend. I love the feeling of finally figuring out a solution to a problem.
+            My core stack is Spring Framework, Angular, Machine Learning and AI. I am also
+            familiar with MySQL and MongoDB. I am always looking to learn new
+            technologies. I am currently looking for a full-time position
+            as a Software Engineer.
+        </div>
+        <div>
+            When I'm not coding, I enjoy playing Valorant and gossiping with my friends.
+            I also love to learn new things. Fun fact, I always ignore everything around me
+            while coding except computer.
+        </div>
+    </div>
+</section>
+<section class="pt-36 flex justify-center" id="projects">
+    <div class=" font-semibold  scroll-mt-[100rem] ">
+        <div class="text-center mb-8 text-3xl">My&nbsp;Projects</div>
+        <div class="group mb-3 sm:mb-8 last:mb-0 bg-white rounded-3xl hover:shadow scale-102 duration-300"
+             style="opacity: 1; ">
+            <div
+                    class="bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[27rem] hover:bg-gray-200 transition sm:group-even:pl-8  dark:bg-white/10 dark:hover:bg-white/20">
+                <div class="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
+                    <h3 class="text-2xl font-semibold">Doctors Care</h3>
+                    <p class="mt-2 font-medium leading-relaxed text-gray-700 ">A
+                        Web application created so user can chat with doctors and have their treatment from home</p>
+                    <ul class="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Spring Boot
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Websocket
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Hibernate
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            MySQL
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            TinyMCE
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Html
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            CSS
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            JQuery
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Ajax
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Bootstrap
+                        </li>
+                    </ul>
+                    <a class="bg-gray-200 p-3 mt-4 text-gray-700 px-3 py-1  flex items-center justify-center gap-2 text-[1.35rem]
+                     rounded-full focus:scale-[1.15] max-w-[10rem]
+             hover:scale-[1.15] hover:text-gray-950 active:scale-105  transition cursor-pointer
+              border-gray-200  "
+                       href="https://github.com/Rakib-Hasan-455/DoctorsCare-Spring-Boot-Application" target="_blank">
+                        <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0"
+                             viewBox="0 0 448 512" width="1em"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5
+                      0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7
+                       37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7
+                       17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1
+                        22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6
+                         22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5
+                          18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5
+                           8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1
+                            73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2
+                             1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4
+                              0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1
+                              1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9
+                               1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9
+                                4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1
+                                 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6
+                                 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6
+                                  1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z">
+                            </path>
+                        </svg>
+                        Github
+                    </a>
+                </div>
+                <img alt="Project I worked on" class="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg
+                 shadow-2xl transition duration-500
+                 group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
+                   group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
+                     group-even:right-[initial] group-even:-left-40" data-nimg="1" decoding="async" height="512"
+                     loading="lazy"
+                     src="/resources/image/project-images/doctors-care.PNG"
+                     style="color:transparent"
+                     width="512">
+            </div>
+        </div>
+        <div class="group mb-3 sm:mb-8 last:mb-0 bg-white rounded-3xl hover:shadow scale-102 duration-300"
+             style="opacity: 1; ">
+            <div
+                    class="bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[27rem] hover:bg-gray-200 transition sm:group-even:pl-8  dark:bg-white/10 dark:hover:bg-white/20">
+                <div class="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
+                    <h3 class="text-2xl font-semibold">Hotel Management System</h3>
+                    <p class="mt-2 font-medium leading-relaxed text-gray-700 ">A
+                        Hotel management System is a desktop application where users can book hotel room,
+                        review about the hotel service. Managers can manage rooms, book rooms for new
+                        customers and the admin can create, update and delete employees
+                        for their application.
+                    </p>
+                    <ul class="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            JavaFX
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Java
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            ITextPdf
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            JFoenix UI Components
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Font Awesome
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            MySQL
+                        </li>
+                    </ul>
+                    <a class="bg-gray-200 p-3 mt-4 text-gray-700 px-3 py-1  flex items-center justify-center gap-2 text-[1.35rem]
+                     rounded-full focus:scale-[1.15] max-w-[10rem]
+             hover:scale-[1.15] hover:text-gray-950 active:scale-105  transition cursor-pointer
+              border-gray-200  "
+                       href="https://github.com/Rakib-Hasan-455/Hotel-Management-System-JavaFx" target="_blank">
+                        <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0"
+                             viewBox="0 0 448 512" width="1em"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5
+                      0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7
+                       37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7
+                       17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1
+                        22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6
+                         22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5
+                          18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5
+                           8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1
+                            73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2
+                             1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4
+                              0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1
+                              1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9
+                               1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9
+                                4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1
+                                 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6
+                                 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6
+                                  1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z">
+                            </path>
+                        </svg>
+                        Github
+                    </a>
+                </div>
+                <img alt="Project I worked on" class="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-lg
+                 shadow-2xl transition duration-500
+                 group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
+                   group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
+                     group-even:right-[initial] group-even:-left-40" data-nimg="1" decoding="async" height="512"
+                     loading="lazy"
+                     src="/resources/image/project-images/hotel-management-system1.png"
+                     style="color:transparent"
+                     width="856">
+            </div>
+        </div>
+        <div class="group mb-3 sm:mb-8 last:mb-0 bg-white rounded-3xl hover:shadow scale-102 duration-300"
+             style="opacity: 1; ">
+            <div
+                    class="bg-gray-100 max-w-[50rem] border border-black/5 rounded-lg overflow-hidden sm:pr-8 relative sm:h-[27rem] hover:bg-gray-200 transition sm:group-even:pl-8  dark:bg-white/10 dark:hover:bg-white/20">
+                <div class="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
+                    <h3 class="text-2xl font-semibold">Pickachu Online Shop</h3>
+                    <p class="mt-2 font-medium leading-relaxed text-gray-700 ">
+                        It's an Web application where the customers can login and buy their desired products from the
+                        store and also the store
+                        manager can add and update their products </p>
+                    <ul class="flex flex-wrap mt-4 gap-2 sm:mt-auto">
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Spring MVC
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Servlet
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Jsp
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            MySQL
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Html
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            CSS
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Javascript
+                        </li>
+                        <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
+                            Bootstrap
+                        </li>
+                    </ul>
+                    <a class="bg-gray-200 p-3 mt-4 text-gray-700 px-3 py-1  flex items-center justify-center gap-2 text-[1.35rem]
+                     rounded-full focus:scale-[1.15] max-w-[10rem]
+             hover:scale-[1.15] hover:text-gray-950 active:scale-105  transition cursor-pointer
+              border-gray-200  "
+                       href="https://github.com/Rakib-Hasan-455/Easy-Ecommerce-Servlet-JSP-JDBC" target="_blank">
+                        <svg fill="currentColor" height="1em" stroke="currentColor" stroke-width="0"
+                             viewBox="0 0 448 512" width="1em"
+                             xmlns="http://www.w3.org/2000/svg">
+                            <path d="M400 32H48C21.5 32 0 53.5 0 80v352c0 26.5 21.5 48 48 48h352c26.5
+                      0 48-21.5 48-48V80c0-26.5-21.5-48-48-48zM277.3 415.7c-8.4 1.5-11.5-3.7-11.5-8 0-5.4.2-33 .2-55.3 0-15.6-5.2-25.5-11.3-30.7
+                       37-4.1 76-9.2 76-73.1 0-18.2-6.5-27.3-17.1-39 1.7-4.3 7.4-22-1.7-45-13.9-4.3-45.7
+                       17.9-45.7 17.9-13.2-3.7-27.5-5.6-41.6-5.6-14.1 0-28.4 1.9-41.6 5.6 0 0-31.8-22.2-45.7-17.9-9.1
+                        22.9-3.5 40.6-1.7 45-10.6 11.7-15.6 20.8-15.6 39 0 63.6 37.3 69 74.3 73.1-4.8 4.3-9.1 11.7-10.6
+                         22.3-9.5 4.3-33.8 11.7-48.3-13.9-9.1-15.8-25.5-17.1-25.5-17.1-16.2-.2-1.1 10.2-1.1 10.2 10.8 5
+                          18.4 24.2 18.4 24.2 9.7 29.7 56.1 19.7 56.1 19.7 0 13.9.2 36.5.2 40.6 0 4.3-3 9.5-11.5
+                           8-66-22.1-112.2-84.9-112.2-158.3 0-91.8 70.2-161.5 162-161.5S388 165.6 388 257.4c.1
+                            73.4-44.7 136.3-110.7 158.3zm-98.1-61.1c-1.9.4-3.7-.4-3.9-1.7-.2-1.5 1.1-2.8 3-3.2
+                             1.9-.2 3.7.6 3.9 1.9.3 1.3-1 2.6-3 3zm-9.5-.9c0 1.3-1.5 2.4-3.5 2.4-2.2.2-3.7-.9-3.7-2.4
+                              0-1.3 1.5-2.4 3.5-2.4 1.9-.2 3.7.9 3.7 2.4zm-13.7-1.1c-.4 1.3-2.4 1.9-4.1
+                              1.3-1.9-.4-3.2-1.9-2.8-3.2.4-1.3 2.4-1.9 4.1-1.5 2 .6 3.3 2.1 2.8 3.4zm-12.3-5.4c-.9
+                               1.1-2.8.9-4.3-.6-1.5-1.3-1.9-3.2-.9-4.1.9-1.1 2.8-.9 4.3.6 1.3 1.3 1.8 3.3.9
+                                4.1zm-9.1-9.1c-.9.6-2.6 0-3.7-1.5s-1.1-3.2 0-3.9c1.1-.9 2.8-.2 3.7 1.3 1.1 1.5 1.1
+                                 3.3 0 4.1zm-6.5-9.7c-.9.9-2.4.4-3.5-.6-1.1-1.3-1.3-2.8-.4-3.5.9-.9 2.4-.4 3.5.6
+                                 1.1 1.3 1.3 2.8.4 3.5zm-6.7-7.4c-.4.9-1.7 1.1-2.8.4-1.3-.6-1.9-1.7-1.5-2.6.4-.6
+                                  1.5-.9 2.8-.4 1.3.7 1.9 1.8 1.5 2.6z">
+                            </path>
+                        </svg>
+                        Github
+                    </a>
+                </div>
+                <img alt="Project I worked on" class="absolute hidden sm:block top-8 -right-40 w-[28.25rem] rounded-t-lg
+                 shadow-2xl transition duration-500
+                 group-hover:scale-[1.04] group-hover:-translate-x-3 group-hover:translate-y-3 group-hover:-rotate-2
+                   group-even:group-hover:translate-x-3 group-even:group-hover:translate-y-3 group-even:group-hover:rotate-2
+                     group-even:right-[initial] group-even:-left-40" data-nimg="1" decoding="async" height="512"
+                     loading="lazy"
+                     src="/resources/image/project-images/pickachu-online-shop.PNG"
+                     style="color:transparent"
+                     width="512">
+            </div>
+        </div>
+    </div>
+
+</section>
+<section class="pt-36 flex justify-center" id="skills">
+    <div class="mb-4 max-w-[53rem] scroll-mt-28 text-center sm:mb-20">
+        <h2 class="text-3xl font-medium capitalize mb-8 text-center">My skills</h2>
+        <ul class="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Java
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                JavaFX
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Servlet
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                JSP
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                JDBC
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Spring Boot
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Spring Security
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Thymeleaf
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Websocket
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Postman
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                HTML
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                CSS
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Bootstrap
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Tailwind CSS
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                JavaScript
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Typescript
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Angular
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Material Angular
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Hibernate
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                MySQL
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                MongoDB
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Git
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Github
+            </li>
+            <li class=" bg-slate-50	 opacity-60 border- rounded-xl px-5 py-3  border-[1px] border-slate-300"
+                style="opacity: 1; transform: none;">
+                Gitlab
+            </li>
+        </ul>
+    </div>
+</section>
+<section class="pt-36 flex justify-center" id="experience">
+
+    <div class=" max-w-[73rem] scroll-mt-28  sm:mb-40">
+        <h2 class="text-3xl font-medium capitalize mb-2 text-center">Experience</h2>
+
+
+        <div class="container bg-gray-200 mx-auto w-full h-full">
+            <div class="relative wrap overflow-hidden p-10 pb-40 h-full">
+                <div class=" absolute border-opacity-20 border-gray-700 h-full border"
+                     style="left: 50%"></div>
+                <!-- right timeline -->
+                <div class="mb-8 flex justify-between items-center w-full right-timeline">
+                    <div class="order-1 w-5/12">
+                        <div class="text-right opacity-65 font-semibold ">2022 Nov - 2024 Feb</div>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl  rounded-full">
+                        <h1 class="mx-auto font-semibold text-lg text-white">
+                            <div class=" rounded-full border-[0.0px] border-slate-600 ring-[1px] ring-gray-400 shadow-xl drop-shadow-lg ring-offset-8
+                             ring-offset-slate-50  ">
+                                <img class="rounded-full w-14 h-14"
+                                     src="resources/image/logo/seulogo.png">
+                            </div>
+
+                        </h1>
+                    </div>
+                    <div class="order-1 w-5/12 px-6 py-4 -mb-48 ">
+
+                        <div class="rounded-r-2xl rounded-l-xl"
+                             style="background:#f3f4f6;box-shadow:none;border:1px solid rgba(0, 0, 0, 0.05);
+     text-align:left;padding:1.3rem 2rem">
+                            <div class="vertical-timeline-element-content-arrow"
+                                 style="border-right:0.4rem solid #9ca3af"></div>
+                            <h3 class="font-semibold capitalize">Programming Assistant, Office of IT</h3>
+                            <p class="font-normal !mt-0">Southeast University, Dhaka, Bangladesh</p>
+                            <p class="!mt-1 !font-normal text-gray-600">
+                                Responsible for developing and maintaining the University Management System
+                                (ums.seu.edu.bd) at SEU. Tasks include collecting requirements, collaborating
+                                with teams to convert them into software, providing user support, refactoring
+                                legacy code, conducting critical analysis on core modules, and offering
+                                feedback on external vendors' work for the university's new website (seu.edu.bd).
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+                <!-- left timeline -->
+                <div class="pt-32 mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 w-5/12">
+                        <div class="text-left opacity-65 font-semibold ">2020 Jun - 2022 Mar</div>
+                    </div>
+                    <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl  rounded-full">
+                        <h1 class="mx-auto text-white font-semibold text-lg">
+                            <div class=" rounded-full border-[0.0px] border-slate-600 ring-[1px] ring-gray-400 shadow-xl drop-shadow-lg ring-offset-8
+                             ring-offset-slate-50  ">
+                                <img class="rounded-full w-14 h-14"
+                                     src="resources/image/logo/seulogo.png">
+                            </div>
+                        </h1>
+                    </div>
+                    <div class="order-1 w-5/12 px-6 py-4 -mb-48">
+
+                        <div class="rounded-r-2xl rounded-l-xl"
+                             style="background:#f3f4f6;box-shadow:none;border:1px solid rgba(0, 0, 0, 0.05);
+     text-align:left;padding:1.3rem 2rem">
+                            <div class="vertical-timeline-element-content-arrow"
+                                 style="border-right:0.4rem solid #9ca3af"></div>
+                            <h3 class="font-semibold capitalize">Batch Representative, CSE Dept.</h3>
+                            <p class="font-normal !mt-0">Southeast University, Dhaka, Bangladesh</p>
+                            <p class="!mt-1 !font-normal text-gray-600">
+                                As a batch representative, I played a key role in fostering unity and support within
+                                my group. Serving as the main point of contact, I addressed member concerns,
+                                organized activities, and facilitated communication. From coordinating programs
+                                to resolving conflicts and building connections, my focus was on ensuring the
+                                well-being and cohesion of the batch community through proactive engagement and
+                                effective communication.
+
+
+                            </p>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+
+<section class="pt-36 flex justify-center" id="contact">
+    <div class=" mb-20 w-[min(100%,48rem)]  py-8 bg-gray-100 rounded-2xl flex flex-col justify-center items-center">
+
+        <div class="w-[min(100%,38rem)] text-center" style="opacity: 1;">
+            <h2
+                    class="text-3xl font-medium capitalize mb-8 text-center">Contact me</h2>
+            <p class="text-gray-700 -mt-6 ">Please contact me directly at<!-- --> <a class="underline"
+                                                                                     href="mailto:hasanrakib455@gmail.com">hasanrakib455@gmail.com</a>
+                <!-- -->or through this form.</p>
+            <form action="javascript:throw new Error('A React form was unexpectedly submitted. If you called form.submit() manually, consider using form.requestSubmit() instead. If you\'re trying to use event.stopPropagation() in a submit event handler, consider also calling event.preventDefault().')"
+                  class="mt-10 flex flex-col dark:text-black">
+                <input class="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+                       maxlength="500" name="senderEmail" placeholder="Your email" required="" type="email">
+                <textarea
+                        class="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
+                        maxlength="5000" name="message" placeholder="Your message" required=""></textarea>
+                <div class="flex justify-end mr-8 mt-2">
+                    <button class="group flex items-center justify-center gap-2 h-[3rem] w-[8rem] bg-gray-900
+             text-white rounded-full outline-none transition-all focus:scale-110
+              hover:scale-110 hover:bg-gray-950 active:scale-105
+                disabled:scale-100 disabled:bg-opacity-65"
+                            type="submit">
+                        Submit<!-- -->
+                        <svg class="text-xs opacity-70 transition-all group-hover:translate-x-1 group-hover:-translate-y-1"
+                             fill="currentColor" height="1em" stroke="currentColor"
+                             stroke-width="0"
+                             viewBox="0 0 512 512" width="1em" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M476 3.2L12.5 270.6c-18.1 10.4-15.8 35.6 2.2 43.2L121 358.4l287.3-253.2c5.5-4.9 13.3 2.6 8.6 8.3L176 407v80.5c0 23.6 28.5 32.9 42.5 15.8L282 426l124.6 52.2c14.2 6 30.4-2.9 33-18.2l72-432C515 7.8 493.3-6.8 476 3.2z"></path>
+                        </svg>
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+</section>
+
+
+<div class="pt-20">
+    <footer class="mb-10 px-4 text-center text-gray-500"><small class="mb-2 block text-xs">©rakib-hasan-455, All rights
+        reserved.</small>
+        <p class="text-xs"><span class="font-semibold">Quote:</span>
+
+
+            “Life is a random experience.”
+
+
+        </p>
+    </footer>
+</div>
+</body>
+</html>
