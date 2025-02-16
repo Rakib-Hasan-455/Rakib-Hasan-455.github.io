@@ -766,8 +766,20 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
     }
 </style>
 <script>
-    document.getElementById('monthlyIncome').addEventListener('input', calculateTax);
-    document.getElementById('yearlyBonus').addEventListener('input', calculateTax);
+    document.getElementById('monthlyIncome').addEventListener('input', function () {
+        const monthlyIncome = this.value;
+        const bonusField = document.getElementById('yearlyBonus');
+
+        if (document.activeElement !== bonusField) {
+            bonusField.value = monthlyIncome;
+        }
+
+        calculateTax();
+    });
+
+    document.getElementById('yearlyBonus').addEventListener('input', function () {
+        calculateTax();
+    });
 
     function calculateTax() {
         const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value) || 0;
@@ -813,23 +825,26 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
     // Modal Logic
     const taxCalculatorButton = document.getElementById('taxCalculatorButton');
     const taxCalculatorModal = document.getElementById('taxCalculatorModal');
-    const modalContent = taxCalculatorModal.querySelector('div'); // The modal content div
 
     taxCalculatorButton.addEventListener('click', () => {
         taxCalculatorModal.classList.remove('hidden');
+        $('body').css('overflow', 'hidden'); // Disable scrolling
     });
 
+    // const modalContent = taxCalculatorModal.querySelector('div'); // The modal content div
+
     // Close modal when clicking outside the modal content
-    window.addEventListener('click', (event) => {
-        if (event.target === taxCalculatorModal && !modalContent.contains(event.target)) {
-            taxCalculatorModal.classList.add('hidden');
-        }
-    });
+    // window.addEventListener('click', (event) => {
+    //     if (event.target === taxCalculatorModal && !modalContent.contains(event.target)) {
+    //         taxCalculatorModal.classList.add('hidden');
+    //     }
+    // });
     const closeModalButton = document.getElementById('closeModal');
 
     // Close modal when clicking the close button
     closeModalButton.addEventListener('click', () => {
         taxCalculatorModal.classList.add('hidden');
+        $('body').css('overflow', ''); // Disable scrolling
     });
 </script>
 </body>
