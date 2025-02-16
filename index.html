@@ -676,18 +676,25 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
     </footer>
 </div>
 
+
 <!-- Floating Button -->
-<!-- Floating Button -->
-<button id="taxCalculatorButton" class="attention-grab fixed right-8 top-1/2 transform -translate-y-1/2 bg-green-500 text-white p-4 rounded-full shadow-lg hover:bg-green-600 hover:rounded-xl transition-all duration-500 ease-in-out group">
-    <!-- Calculator Icon -->
-    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+<button id="taxCalculatorButton" class="attention-grab fixed right-8 top-1/2 transform -translate-y-1/2
+    bg-gradient-to-r from-green-500 to-green-700 text-white p-4 rounded-full shadow-2xl
+    hover:bg-gradient-to-r hover:from-green-600 hover:to-green-800 hover:scale-110 hover:shadow-lg
+    transition-all duration-500 ease-in-out group animate-pulse">
+    <div class="absolute inset-0 rounded-full bg-white opacity-25 animate-ping" style="z-index: -1"></div>
+
+    <!-- Money Bag Icon -->
+    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+         class="w-7 h-7 transition-transform duration-300 group-hover:rotate-6 " style="z-index: 99" >
         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.633.806-4.875 2.125a6.94 6.94 0 0 0-1.125 1.125V3a.75.75 0 0 0-1.5 0v2.25H3a.75.75 0 0 0 0 1.5h2.25V9a.75.75 0 0 0 1.5 0V6.75h2.25a.75.75 0 0 0 0-1.5H6.75V3a.75.75 0 0 0-1.5 0v2.25c0 .398.158.78.44 1.06L4.5 6.75a6.94 6.94 0 0 0 1.125 1.125A6.94 6.94 0 0 0 6.75 9H12c1.892 0 3.633-.806 4.875-2.125A6.94 6.94 0 0 0 18 6.75V3a.75.75 0 0 0-1.5 0v2.25H14.25a.75.75 0 0 0 0 1.5H16.5V9a.75.75 0 0 0 1.5 0V6.75H21a.75.75 0 0 0 0-1.5h-2.25V3a.75.75 0 0 0-1.5 0v2.25c0 .398-.158.78-.44 1.06L19.5 6.75a6.94 6.94 0 0 0-1.125-1.125A6.94 6.94 0 0 0 16.5 3H12z" />
     </svg>
     <!-- Tooltip -->
-    <span class="absolute right-16 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-sm px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-        BD Tax Calculator
+    <span class="absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium shadow-xl">
+        Calculate Your BD Tax Now! 💰
     </span>
 </button>
+
 
 <!-- Popup Modal -->
 <div id="taxCalculatorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden " style="z-index: 9999">
@@ -762,9 +769,25 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
     }
 
     .attention-grab {
-        animation: pulse 1.5s ease-in-out infinite;
+        animation: pulse 2s ease-in-out infinite;
     }
 </style>
+
+
+<!-- First add the required keyframes and utilities -->
+<style>
+    @keyframes ping {
+        75%, 100% {
+            transform: scale(2);
+            opacity: 0;
+        }
+    }
+
+    .animate-ping {
+        animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
+    }
+</style>
+
 <script>
     document.getElementById('monthlyIncome').addEventListener('input', function () {
         const monthlyIncome = this.value;
