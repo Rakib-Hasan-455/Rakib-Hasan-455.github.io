@@ -705,7 +705,7 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
         <!-- Modal Header with Close Button -->
         <div class="flex justify-center items-center relative mb-4">
             <h1 class="text-2xl font-semibold text-gray-700 text-center">
-                <span title="Bangladesh">BD</span> Salary Tax Calculator
+                <span title="Bangladesh">BD</span> Salary Tax 2025
             </h1>
             <!-- Close Button -->
             <button id="closeModal" class="absolute right-0 text-gray-500 hover:text-gray-700 focus:outline-none">
@@ -746,13 +746,8 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
         <h2 class="text-lg font-semibold mt-4 text-gray-700">Tax Breakdown</h2>
         <table class="w-full border rounded-lg overflow-hidden text-sm">
-            <tbody>
-            <tr><td class="p-2">Up to 350,000 @ 0%</td><td class="p-2 text-right" id="tax1">0.00</td></tr>
-            <tr class="bg-gray-100"><td class="p-2">Next 100,000 @ 5%</td><td class="p-2 text-right" id="tax2">0.00</td></tr>
-            <tr><td class="p-2">Next 400,000 @ 10%</td><td class="p-2 text-right" id="tax3">0.00</td></tr>
-            <tr class="bg-gray-100"><td class="p-2">Next 500,000 @ 15%</td><td class="p-2 text-right" id="tax4">0.00</td></tr>
-            <tr><td class="p-2">Next 500,000 @ 20%</td><td class="p-2 text-right" id="tax5">0.00</td></tr>
-            <tr class="bg-gray-100"><td class="p-2">Remaining @ 25%</td><td class="p-2 text-right" id="tax6">0.00</td></tr>
+            <tbody id="taxTableBody">
+           
             </tbody>
         </table>
 
@@ -791,6 +786,16 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 </style>
 
 <script>
+
+        const slabs = [
+            { limit: 375000, rate: 0.0 },
+            { limit: 300000, rate: 0.1 },
+            { limit: 400000, rate: 0.15 },
+            { limit: 500000, rate: 0.2 },
+            { limit: 2000000, rate: 0.25 },
+            { limit: Infinity, rate: 0.3 }
+        ];
+
     document.getElementById('monthlyIncome').addEventListener('input', function () {
         const monthlyIncome = this.value;
         const bonusField = document.getElementById('yearlyBonus');
@@ -821,15 +826,6 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
         document.getElementById('lessAmount').textContent = lessAmount.toFixed(2);
         document.getElementById('taxableIncome').textContent = taxableIncome.toFixed(2);
 
-        const slabs = [
-            { limit: 350000, rate: 0.0 },
-            { limit: 100000, rate: 0.05 },
-            { limit: 400000, rate: 0.1 },
-            { limit: 500000, rate: 0.15 },
-            { limit: 500000, rate: 0.2 },
-            { limit: Infinity, rate: 0.25 }
-        ];
-
         let remainingIncome = taxableIncome;
         let totalTax = 0;
 
@@ -854,7 +850,41 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
     taxCalculatorButton.addEventListener('click', () => {
         taxCalculatorModal.classList.remove('hidden');
         $('body').css('overflow', 'hidden'); // Disable scrolling
+        createTexTableBody();
     });
+
+    function createTexTableBody() {
+
+            const tbody = document.getElementById("taxTableBody");
+
+            let previousLimit = 0;
+
+            slabs.forEach((slab, index) => {
+                const isEvenRow = index % 2 !== 0;
+                const tr = document.createElement("tr");
+                if (isEvenRow) tr.classList.add("bg-gray-100");
+
+                const labelTd = document.createElement("td");
+                labelTd.className = "p-2";
+
+                if (slab.limit === Infinity) {
+                    labelTd.textContent = `Remaining @ ${slab.rate * 100}%`;
+                } else if (index === 0) {
+                    labelTd.textContent = `Up to ${slab.limit.toLocaleString()} @ ${slab.rate * 100}%`;
+                } else {
+                    labelTd.textContent = `Next ${(slab.limit).toLocaleString()} @ ${slab.rate * 100}%`;
+                }
+
+                const valueTd = document.createElement("td");
+                valueTd.className = "p-2 text-right";
+                valueTd.id = `tax${index + 1}`;
+                valueTd.textContent = "0.00";
+
+                tr.appendChild(labelTd);
+                tr.appendChild(valueTd);
+                tbody.appendChild(tr);
+            });
+        }
 
     // const modalContent = taxCalculatorModal.querySelector('div'); // The modal content div
 
