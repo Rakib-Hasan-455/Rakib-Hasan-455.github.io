@@ -5,7 +5,7 @@
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="description" content="Rakib - Java & Spring Boot Developer">
     <meta name="google-site-verification" content="Rkdu0wSQmtQFivOPsJTkf_NjWRhG1fpoSEMrHkopyfg" />
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
             type="text/javascript"></script>
@@ -14,8 +14,7 @@
             type="text/javascript"></script>
 
 
-    <script src="index.js" type="text/javascript"></script>
-    <link href="index.css" rel="stylesheet">
+    <link href="./index.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/resources/image/logo/portfolio-logo.png">
     
     <title>Rakibul Hasan | Java Software Engineer</title>
@@ -701,13 +700,13 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
 <!-- Popup Modal -->
 <div id="taxCalculatorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden " style="z-index: 9999">
-    <div class="bg-white shadow-xl rounded-lg p-6 w-full max-w-lg border border-gray-300 sm:w-4/5 md:w-3/5 lg:w-2/5">
+    <div class="bg-white shadow-xl rounded-lg p-6 w-full max-w-lg border border-gray-300 sm:w-4/5 md:w-3/5 lg:w-3/5">
         <!-- Modal Header with Close Button -->
         <!-- Modal Header with Close Button -->
         <div class="flex justify-center items-center relative mb-4">
-            <h1 class="text-2xl font-semibold text-gray-700 text-center">
-                <span title="Bangladesh">BD</span> Salary Tax 2025
-            </h1>
+            <h2 class="text-2xl font-semibold text-gray-700 text-center">
+                <span title="Bangladesh">BD</span> Income Tax <span class="prevYearLabel" ></span> - <span class="nextYearLabel" ></span>
+            </h2>
             <!-- Close Button -->
             <button id="closeModal" class="absolute right-0 text-gray-500 hover:text-gray-700 focus:outline-none">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
@@ -719,19 +718,36 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
         <div class="space-y-4">
             <div>
-                <label class="block text-gray-600 font-medium">Monthly Income:</label>
+                <label class="block text-gray-600 font-medium"> Monthly Income Average
+                    <!-- info icon with tooltip -->
+                    <div class="relative inline-block ml-2 group">
+                        <i class="fas fa-info-circle text-gray-400 hover:text-gray-500 cursor-pointer"></i>
+
+                        <!-- Tooltip -->
+                        <span class="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 w-64
+            bg-gray-900 text-white text-xs rounded-md px-3 py-2
+            opacity-0 group-hover:opacity-100 group-hover:translate-y-0
+            transform translate-y-1 transition-all duration-300 shadow-lg pointer-events-none">
+            Enter your total income including salary, bonuses, and other sources divided by 12 months [ <span class="prevYearLabel" ></span> - <span class="nextYearLabel" ></span> ]
+        </span>
+                    </div>
+                </label>
+
+
+
+
                 <input type="number" id="monthlyIncome" class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="Enter Income">
             </div>
             <div>
-                <label class="block text-gray-600 font-medium">Yearly Bonus:</label>
-                <input type="number" id="yearlyBonus" class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="Enter Bonus">
+                <label class="block text-gray-600 font-medium hidden">Yearly Bonus:</label>
+                <input type="number" id="yearlyBonus" class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500 hidden" placeholder="Enter Bonus" value="0">
             </div>
         </div>
 
         <table class="w-full mt-6 border rounded-lg overflow-hidden text-sm">
             <tbody>
             <tr class="bg-gray-700 text-white font-semibold">
-                <td class="p-2">Total Income (Yearly <span id="yearlyTotal"></span> + Bonus<span id="bonusTotal"></span>)</td>
+                <td class="p-2">Total Income from <span class="prevYearLabel" ></span> - <span class="nextYearLabel" ></span></td>
                 <td class="p-2 text-right" id="totalIncome">0.00</td>
             </tr>
             <tr class="bg-gray-100">
@@ -758,152 +774,8 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
         </div>
     </div>
 </div>
+<script src="./index.js" type="text/javascript"></script>
 
-<style>
-    @keyframes pulse {
-        0% { transform: scale(1); opacity: 1; }
-        50% { transform: scale(1.1); opacity: 0.8; }
-        100% { transform: scale(1); opacity: 1; }
-    }
-
-    .attention-grab {
-        animation: pulse 2s ease-in-out infinite;
-    }
-</style>
-
-
-<!-- First add the required keyframes and utilities -->
-<style>
-    @keyframes ping {
-        75%, 100% {
-            transform: scale(2);
-            opacity: 0;
-        }
-    }
-
-    .animate-ping {
-        animation: ping 2s cubic-bezier(0, 0, 0.2, 1) infinite;
-    }
-</style>
-
-<script>
-
-        const slabs = [
-            { limit: 375000, rate: 0.0 },
-            { limit: 300000, rate: 0.1 },
-            { limit: 400000, rate: 0.15 },
-            { limit: 500000, rate: 0.2 },
-            { limit: 2000000, rate: 0.25 },
-            { limit: Infinity, rate: 0.3 }
-        ];
-
-    document.getElementById('monthlyIncome').addEventListener('input', function () {
-        const monthlyIncome = this.value;
-        const bonusField = document.getElementById('yearlyBonus');
-
-        if (document.activeElement !== bonusField) {
-            bonusField.value = monthlyIncome;
-        }
-
-        calculateTax();
-    });
-
-    document.getElementById('yearlyBonus').addEventListener('input', function () {
-        calculateTax();
-    });
-
-    function calculateTax() {
-        const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value) || 0;
-        const yearlyBonus = parseFloat(document.getElementById('yearlyBonus').value) || 0;
-        const yearlyTotal = monthlyIncome * 12;
-
-        const totalIncome = yearlyTotal  + yearlyBonus;
-        const lessAmount = Math.min(totalIncome / 3, 450000);
-        const taxableIncome = totalIncome - lessAmount;
-        document.getElementById('yearlyTotal').textContent = yearlyTotal + " ";
-        document.getElementById('bonusTotal').textContent = " " + yearlyBonus;
-
-        document.getElementById('totalIncome').textContent = totalIncome.toFixed(2);
-        document.getElementById('lessAmount').textContent = lessAmount.toFixed(2);
-        document.getElementById('taxableIncome').textContent = taxableIncome.toFixed(2);
-
-        let remainingIncome = taxableIncome;
-        let totalTax = 0;
-
-        slabs.forEach((slab, index) => {
-            const balance = Math.min(remainingIncome, slab.limit);
-            const tax = balance * slab.rate;
-            remainingIncome -= balance;
-            totalTax += tax;
-
-            document.getElementById(`tax${index + 1}`).textContent = tax.toFixed(2);
-        });
-
-        document.getElementById('payableTax').textContent = totalTax.toFixed(2);
-        document.getElementById('taxPerMonth').textContent = (totalTax / 12).toFixed(2);
-    }
-
-
-    // Modal Logic
-    const taxCalculatorButton = document.getElementById('taxCalculatorButton');
-    const taxCalculatorModal = document.getElementById('taxCalculatorModal');
-
-    taxCalculatorButton.addEventListener('click', () => {
-        taxCalculatorModal.classList.remove('hidden');
-        $('body').css('overflow', 'hidden'); // Disable scrolling
-        createTexTableBody();
-    });
-
-    function createTexTableBody() {
-
-            const tbody = document.getElementById("taxTableBody");
-            tbody.innerHTML = "";
-
-            let previousLimit = 0;
-
-            slabs.forEach((slab, index) => {
-                const isEvenRow = index % 2 !== 0;
-                const tr = document.createElement("tr");
-                if (isEvenRow) tr.classList.add("bg-gray-100");
-
-                const labelTd = document.createElement("td");
-                labelTd.className = "p-2";
-
-                if (slab.limit === Infinity) {
-                    labelTd.textContent = `Remaining @ ${slab.rate * 100}%`;
-                } else if (index === 0) {
-                    labelTd.textContent = `Up to ${slab.limit.toLocaleString()} @ ${slab.rate * 100}%`;
-                } else {
-                    labelTd.textContent = `Next ${(slab.limit).toLocaleString()} @ ${slab.rate * 100}%`;
-                }
-
-                const valueTd = document.createElement("td");
-                valueTd.className = "p-2 text-right";
-                valueTd.id = `tax${index + 1}`;
-                valueTd.textContent = "0.00";
-
-                tr.appendChild(labelTd);
-                tr.appendChild(valueTd);
-                tbody.appendChild(tr);
-            });
-        }
-
-    // const modalContent = taxCalculatorModal.querySelector('div'); // The modal content div
-
-    // Close modal when clicking outside the modal content
-    // window.addEventListener('click', (event) => {
-    //     if (event.target === taxCalculatorModal && !modalContent.contains(event.target)) {
-    //         taxCalculatorModal.classList.add('hidden');
-    //     }
-    // });
-    const closeModalButton = document.getElementById('closeModal');
-
-    // Close modal when clicking the close button
-    closeModalButton.addEventListener('click', () => {
-        taxCalculatorModal.classList.add('hidden');
-        $('body').css('overflow', ''); // Disable scrolling
-    });
-</script>
 </body>
 
 </html>
