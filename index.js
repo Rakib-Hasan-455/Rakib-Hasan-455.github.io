@@ -86,7 +86,7 @@ function calculateTax() {
     const yearlyTotal = monthlyIncome * 12 || 0;
 
     const totalIncome = yearlyTotal  + 0;
-    const lessAmount = Math.max(totalIncome / 3, 450000/3);
+    const lessAmount = Math.min(totalIncome / 3, 450000);
     const taxableIncome = totalIncome - lessAmount;
 
     document.getElementById('totalIncome').textContent = totalIncome.toFixed(2);
@@ -169,4 +169,5 @@ const closeModalButton = document.getElementById('closeModal');
 closeModalButton.addEventListener('click', () => {
     taxCalculatorModal.classList.add('hidden');
     $('body').css('overflow', ''); // Disable scrolling
+
 });
