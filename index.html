@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
     <meta name="description" content="Rakib - Java & Spring Boot Developer">
-    <meta name="google-site-verification" content="Rkdu0wSQmtQFivOPsJTkf_NjWRhG1fpoSEMrHkopyfg" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="google-site-verification" content="Rkdu0wSQmtQFivOPsJTkf_NjWRhG1fpoSEMrHkopyfg"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+          integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
             type="text/javascript"></script>
@@ -16,40 +18,77 @@
 
     <link href="./index.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/resources/image/logo/portfolio-logo.png">
-    
+
     <title>Rakibul Hasan | Java Software Engineer</title>
 </head>
 <body class="bg-gray-200">
 <!-- Navbar -->
-<nav class="z-[999] fixed flex flex-row justify-center p-1.5 font-semibold gap-5 top-0 left-1/2
-h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg-opacity-80 shadow-lg
- shadow-black/[0.03] backdrop-blur-[0.5rem] sm:top-6 sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full
-  dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75"
-     style="opacity: 1; transform: translateX(-50%) translateY(0px) translateZ(0px);">
-    <a class="nav-link hover:bg-gray-500 bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-400"
-       href="#home"
-       id="homeLink">Home</a>
-    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
-       href="#about"
-       id="aboutLink">About</a>
-    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
-       href="#projects"
-       id="projectsLink">Projects</a>
-    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
-       href="#skills"
-       id="skillsLink">Skills</a>
-    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
-       href="#experience"
-       id="experienceLink">Experience</a>
-    <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
-       href="#contact"
-       id="contactLink">Contact</a>
+<!-- can you make the navbar responsive? in mobile mode navbar needs -->
+<nav class="z-[999] fixed top-0 left-1/2 transform -translate-x-1/2  sm:top-6 w-full sm:w-auto">
+    <div class="hidden sm:block w-full h-[4.5rem] p-1.5 font-semibold
+     sm:h-[3.25rem] sm:w-[36rem] sm:rounded-full rounded-none shadow-lg shadow-black/[0.03] backdrop-blur-[0.5rem] flex items-center justify-between gap-4
+dark:bg-gray-950 dark:border-black/40 dark:bg-opacity-75 border border-white border-opacity-40
+     bg-white bg-opacity-10 sm:bg-opacity-80 ">
+
+        <!-- Desktop links -->
+        <div id="navLinks" class="hidden sm:flex flex-row justify-center gap-5 grow">
+            <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-400"
+               href="#home" id="homeLink">Home</a>
+            <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+               href="#about" id="aboutLink">About</a>
+            <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+               href="#projects" id="projectsLink">Projects</a>
+            <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+               href="#skills" id="skillsLink">Skills</a>
+            <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+               href="#experience" id="experienceLink">Experience</a>
+            <a class="nav-link hover:bg-gray-500 text-gray-400 hover:text-gray-200 hover:cursor-pointer p-2 px-2.5 rounded-full duration-300"
+               href="#contact" id="contactLink">Contact</a>
+        </div>
+    </div>
+
+    <div class="w-full flex flex-row justify-between p-4">
+        <div class="w-1/2">
+            <!-- Hamburger (mobile) -->
+            <button id="navToggle" aria-expanded="false" aria-controls="mobileMenu"
+                    class=" bg-white sm:hidden  p-2 rounded-md text-gray-700 hover:bg-gray-200 focus:outline-none
+    bg-white/60 backdrop-blur-[0.5rem]"
+                    title="Open menu">
+                <svg id="menu-icon" class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2"
+                     xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+                <svg id="close-icon" class="hidden w-6 h-6" fill="none"  stroke="currentColor"
+                     aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 17.94 6M18 18 6.06 6"/>
+                </svg>
+
+            </button>
+
+        </div>
+        <!-- Mobile menu (dropdown) -->
+        <div id="mobileMenu"
+             class="hidden sm:hidden font-semibold w-1/3
+    bg-white/10 backdrop-blur-[0.5rem]
+    rounded-lg shadow-lg p-2 z-[999]
+    border border-white/40">
+            <a id="homeLinkMob"
+               class="nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="#home">Home</a>
+            <a class="nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="#about">About</a>
+            <a class="nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="#projects">Projects</a>
+            <a class="nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="#skills">Skills</a>
+            <a class="nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="#experience">Experience</a>
+            <a class="nav-link block px-3 py-2 rounded-md text-gray-700 hover:bg-gray-100" href="#contact">Contact</a>
+        </div>
+    </div>
+
+
 </nav>
 
 
-<section class="pt-36 flex justify-center" id="home">
+<section class="pt-[6rem] sm:pt-36 flex justify-center" id="home">
 
-    <div class="mb-28 max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
+    <div class="max-w-[50rem] text-center sm:mb-0 scroll-mt-[100rem]">
         <!-- Image -->
         <div class="flex justify-center">
             <img alt="rakib-hasan-455 image(Rakibul Hasan)"
@@ -106,17 +145,19 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
     </div>
 </section>
-<section class="pt-36 flex justify-center" id="about">
-    <div class="mb-28 max-w-[45rem] text-center sm:mb-0 scroll-mt-[100rem]  leading-8 ">
+<section class="pt-[4rem] sm:pt-36  flex justify-center" id="about">
+    <div class="max-w-[45rem] text-center sm:mb-0 scroll-mt-[100rem]  leading-8 ">
         <div class="text-3xl font-medium capitalize mb-8 text-center">About me</div>
 
         <div class=" text-center mb-3">
             I am a Software Engineer with a degree in Computer Science
             from Southeast University (CGPA: 3.85) and experience in backend
             development and system optimization. At Arollo Tech Limited, I enhanced
-            <a href="https://click-n-manage.com/" target="_blank">CNM</a>, a multi-tenant system serving 60+ European companies, achieving a 10x
+            <a href="https://click-n-manage.com/" target="_blank">CNM</a>, a multi-tenant system serving 60+ European
+            companies, achieving a 10x
             improvement in mobile app performance. Previously, I developed
-            the university’s <a href="https://ums.seu.edu.bd" target="_blank">UMS</a> core frontend architecture, streamlining operations for 5000+ users.
+            the university’s <a href="https://ums.seu.edu.bd" target="_blank">UMS</a> core frontend architecture,
+            streamlining operations for 5000+ users.
 
             Proficient in Java, Spring Boot, Angular, and databases like Postgres, MySQL and MongoDB,
             I am passionate about solving complex challenges and continuously advancing
@@ -129,7 +170,7 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
         </div>
     </div>
 </section>
-<section class="pt-36 flex justify-center" id="projects">
+<section class="pt-[4rem] sm:pt-36 flex justify-center" id="projects">
     <div class=" font-semibold  scroll-mt-[100rem] ">
         <div class="text-center mb-8 text-3xl">My&nbsp;Projects</div>
         <div class="group mb-3 sm:mb-8 last:mb-0 bg-white rounded-3xl hover:shadow scale-102 duration-300"
@@ -139,8 +180,9 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
                 <div class="pt-4 pb-7 px-5 sm:pl-10 sm:pr-2 sm:pt-10 sm:max-w-[50%] flex flex-col h-full sm:group-even:ml-[18rem]">
                     <h3 class="text-2xl font-semibold">Doctors Care</h3>
                     <p class="mt-2 font-medium leading-relaxed text-gray-700 ">A
-                        Web application created so user can chat with doctors and have their treatment from home. Can live communicate with
-                    doctors also can payment through SSL Commerz payment gateway.</p>
+                        Web application created so user can chat with doctors and have their treatment from home. Can
+                        live communicate with
+                        doctors also can payment through SSL Commerz payment gateway.</p>
                     <ul class="flex flex-wrap mt-4 gap-2 sm:mt-auto">
                         <li class="bg-black/[0.7] px-3 py-1 text-[0.7rem] uppercase tracking-wider text-white rounded-full dark:text-white/70">
                             Spring Boot
@@ -370,8 +412,8 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
     </div>
 
 </section>
-<section class="pt-36 flex justify-center" id="skills">
-    <div class="mb-4 max-w-[53rem] scroll-mt-28 text-center sm:mb-20">
+<section class="pt-[4rem] sm:pt-36 flex justify-center" id="skills">
+    <div class="max-w-[53rem] scroll-mt-28 text-center">
         <h2 class="text-3xl font-medium capitalize mb-8 text-center">My Skills</h2>
         <ul class="flex flex-wrap justify-center gap-2 text-lg text-gray-800">
             <!-- Programming Languages -->
@@ -498,21 +540,21 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
     </div>
 </section>
-<section class="pt-36 flex justify-center" id="experience">
+<section class="pt-[4rem] sm:pt-32 flex justify-center" id="experience">
 
     <div class=" max-w-[73rem] scroll-mt-28  sm:mb-40">
-        <h2 class="text-3xl font-medium capitalize mb-2 text-center">Experience</h2>
+        <h2 class="text-3xl font-medium capitalize sm:mb-2 text-center">Experience</h2>
 
 
         <div class="container bg-gray-200 mx-auto w-full h-full">
-            <div class="relative wrap overflow-hidden p-10 pb-40 h-full">
-                <div class=" absolute border-opacity-20 border-gray-700 h-full border"
+            <div class="relative wrap overflow-hidden p-10 sm:pb-40 h-full">
+                <div class="hidden sm:block absolute border-opacity-20 border-gray-700 h-full border"
                      style="left: 50%"></div>
 
 
                 <!-- right timeline -->
-                <div class="mb-8 flex justify-between items-center w-full right-timeline">
-                    <div class="order-1 w-5/12">
+                <div class="mb-8 gap-y-8 sm:gap-y-0 flex flex-col sm:flex-row justify-between items-center w-full right-timeline">
+                    <div class="sm:order-1 sm:w-5/12">
                         <div class="text-right opacity-65 font-semibold ">2024 Mar - Present</div>
                     </div>
                     <div class="z-20 flex items-center order-1 bg-gray-50  rounded-full">
@@ -525,7 +567,7 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
                         </h1>
                     </div>
-                    <div class="order-1 w-5/12 px-6 py-4 -mb-48 ">
+                    <div class="order-1 sm:w-5/12 sm:px-6 sm:py-4 sm:-mb-48 ">
 
                         <div class="rounded-r-2xl rounded-l-xl"
                              style="background:#f3f4f6;box-shadow:none;border:1px solid rgba(0, 0, 0, 0.05);
@@ -550,8 +592,8 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
                 </div>
 
                 <!-- left timeline -->
-                <div class="pt-32 mb-8 flex justify-between flex-row-reverse items-center w-full left-timeline">
-                    <div class="order-1 w-5/12">
+                <div class="sm:pt-32 mb-8 gap-y-8 sm:gap-y-0 flex flex-col sm:flex-row justify-between flex-row-reverse items-center w-full left-timeline">
+                    <div class="order-1 sm:w-5/12">
                         <div class="text-left opacity-65 font-semibold ">2022 Nov - 2024 Feb</div>
                     </div>
                     <div class="z-20 flex items-center order-1 bg-gray-800 shadow-xl  rounded-full">
@@ -563,7 +605,7 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
                             </div>
                         </h1>
                     </div>
-                    <div class="order-1 w-5/12 px-6 py-4 -mb-48">
+                    <div class="order-1 sm:w-5/12  sm:px-6 sm:py-4 sm:-mb-48">
 
                         <div class="rounded-r-2xl rounded-l-xl"
                              style="background:#f3f4f6;box-shadow:none;border:1px solid rgba(0, 0, 0, 0.05);
@@ -585,7 +627,7 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
                 </div>
 
                 <!-- right timeline -->
-                <div class="pt-32 mb-8 flex justify-between items-center w-full right-timeline">
+                <div class="hidden sm:block pt-32 sm:mb-8 flex justify-between items-center w-full right-timeline">
                     <div class="order-1 w-5/12">
                         <div class="text-right opacity-65 font-semibold ">2020 Jun - 2022 Mar</div>
                     </div>
@@ -627,17 +669,17 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
 </section>
 
-<section class="-mt-28 pt-36 flex justify-center" id="contact">
-    <div class=" mb-20 w-[min(100%,48rem)]  py-8 bg-gray-100 rounded-2xl flex flex-col justify-center items-center">
+<section class="pt-[0rem] sm:pt-32  sm:-mt-28 flex justify-center" id="contact">
+    <div class=" w-[min(100%,48rem)]  py-8 bg-gray-100 rounded-2xl flex flex-col justify-center items-center mx-[10px] sm:mx-0">
 
-        <div class="w-[min(100%,38rem)] text-center" style="opacity: 1;">
+        <div class="w-[min(100%,38rem)] text-center px-[8px] sm:px-0" style="opacity: 1;">
             <h2
                     class="text-3xl font-medium capitalize mb-8 text-center">Contact me</h2>
             <p class="text-gray-700 -mt-6 ">Please contact me directly at<!-- --> <a class="underline"
                                                                                      href="mailto:hasanrakib455@gmail.com">hasanrakib455@gmail.com</a>
                 <!-- -->or through this form.</p>
             <form action="https://formspree.io/f/mwpvbeej" method="POST"
-                   class="mt-10 flex flex-col dark:text-black">
+                  class="mt-10 flex flex-col dark:text-black">
                 <input class="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
                        maxlength="500" name="senderEmail" placeholder="Your email" required="" type="email">
                 <textarea
@@ -688,29 +730,33 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
 
     <!-- Money Bag Icon -->
     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
-         class="w-7 h-7 transition-transform duration-300 group-hover:rotate-6 " style="z-index: 99" >
-        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.633.806-4.875 2.125a6.94 6.94 0 0 0-1.125 1.125V3a.75.75 0 0 0-1.5 0v2.25H3a.75.75 0 0 0 0 1.5h2.25V9a.75.75 0 0 0 1.5 0V6.75h2.25a.75.75 0 0 0 0-1.5H6.75V3a.75.75 0 0 0-1.5 0v2.25c0 .398.158.78.44 1.06L4.5 6.75a6.94 6.94 0 0 0 1.125 1.125A6.94 6.94 0 0 0 6.75 9H12c1.892 0 3.633-.806 4.875-2.125A6.94 6.94 0 0 0 18 6.75V3a.75.75 0 0 0-1.5 0v2.25H14.25a.75.75 0 0 0 0 1.5H16.5V9a.75.75 0 0 0 1.5 0V6.75H21a.75.75 0 0 0 0-1.5h-2.25V3a.75.75 0 0 0-1.5 0v2.25c0 .398-.158.78-.44 1.06L19.5 6.75a6.94 6.94 0 0 0-1.125-1.125A6.94 6.94 0 0 0 16.5 3H12z" />
+         class="w-7 h-7 transition-transform duration-300 group-hover:rotate-6 " style="z-index: 99">
+        <path stroke-linecap="round" stroke-linejoin="round"
+              d="M15.75 15.75V18m-7.5-6.75h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V13.5zm0 2.25h.008v.008H8.25v-.008zm0 2.25h.008v.008H8.25V18zm2.498-6.75h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V13.5zm0 2.25h.007v.008h-.007v-.008zm0 2.25h.007v.008h-.007V18zm2.504-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zm0 2.25h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V18zm2.498-6.75h.008v.008h-.008v-.008zm0 2.25h.008v.008h-.008V13.5zM8.25 6h7.5v2.25h-7.5V6zM12 2.25c-1.892 0-3.633.806-4.875 2.125a6.94 6.94 0 0 0-1.125 1.125V3a.75.75 0 0 0-1.5 0v2.25H3a.75.75 0 0 0 0 1.5h2.25V9a.75.75 0 0 0 1.5 0V6.75h2.25a.75.75 0 0 0 0-1.5H6.75V3a.75.75 0 0 0-1.5 0v2.25c0 .398.158.78.44 1.06L4.5 6.75a6.94 6.94 0 0 0 1.125 1.125A6.94 6.94 0 0 0 6.75 9H12c1.892 0 3.633-.806 4.875-2.125A6.94 6.94 0 0 0 18 6.75V3a.75.75 0 0 0-1.5 0v2.25H14.25a.75.75 0 0 0 0 1.5H16.5V9a.75.75 0 0 0 1.5 0V6.75H21a.75.75 0 0 0 0-1.5h-2.25V3a.75.75 0 0 0-1.5 0v2.25c0 .398-.158.78-.44 1.06L19.5 6.75a6.94 6.94 0 0 0-1.125-1.125A6.94 6.94 0 0 0 16.5 3H12z"/>
     </svg>
     <!-- Tooltip -->
-    <span class="absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium shadow-xl">
+    <span class="hidden sm:flex absolute right-20 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white text-sm px-4 py-2 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap font-medium shadow-xl">
         Find Your Salary Tax Now! 💰
     </span>
 </button>
 
 
 <!-- Popup Modal -->
-<div id="taxCalculatorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden " style="z-index: 9999">
+<div id="taxCalculatorModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden "
+     style="z-index: 9999">
     <div class="bg-white shadow-xl rounded-lg p-6 w-full max-w-lg border border-gray-300 sm:w-4/5 md:w-3/5 lg:w-3/5">
         <!-- Modal Header with Close Button -->
         <!-- Modal Header with Close Button -->
         <div class="flex justify-center items-center relative mb-4">
             <h2 class="text-2xl font-semibold text-gray-700 text-center">
-                <span title="Bangladesh">BD</span> Income Tax <span class="prevYearLabel" ></span> - <span class="nextYearLabel" ></span>
+                <span title="Bangladesh">BD</span> Income Tax <span class="prevYearLabel"></span> - <span
+                    class="nextYearLabel"></span>
             </h2>
             <!-- Close Button -->
             <button id="closeModal" class="absolute right-0 text-gray-500 hover:text-gray-700 focus:outline-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                     stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
                 </svg>
             </button>
         </div>
@@ -728,26 +774,30 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
             bg-gray-900 text-white text-xs rounded-md px-3 py-2
             opacity-0 group-hover:opacity-100 group-hover:translate-y-0
             transform translate-y-1 transition-all duration-300 shadow-lg pointer-events-none">
-            Enter your total income including salary, bonuses, and other sources divided by 12 months [ <span class="prevYearLabel" ></span> - <span class="nextYearLabel" ></span> ]
+            Enter your total income including salary, bonuses, and other sources divided by 12 months [ <span
+                                class="prevYearLabel"></span> - <span class="nextYearLabel"></span> ]
         </span>
                     </div>
                 </label>
 
 
-
-
-                <input type="number" id="monthlyIncome" class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500" placeholder="Enter Income">
+                <input type="number" id="monthlyIncome"
+                       class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500"
+                       placeholder="Enter Income">
             </div>
             <div>
                 <label class="block text-gray-600 font-medium hidden">Yearly Bonus:</label>
-                <input type="number" id="yearlyBonus" class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500 hidden" placeholder="Enter Bonus" value="0">
+                <input type="number" id="yearlyBonus"
+                       class="border p-2 rounded w-full focus:outline-none focus:ring-2 focus:ring-gray-500 hidden"
+                       placeholder="Enter Bonus" value="0">
             </div>
         </div>
 
         <table class="w-full mt-6 border rounded-lg overflow-hidden text-sm">
             <tbody>
             <tr class="bg-gray-700 text-white font-semibold">
-                <td class="p-2">Total Income from <span class="prevYearLabel" ></span> - <span class="nextYearLabel" ></span></td>
+                <td class="p-2">Total Income from <span class="prevYearLabel"></span> - <span
+                        class="nextYearLabel"></span></td>
                 <td class="p-2 text-right" id="totalIncome">0.00</td>
             </tr>
             <tr class="bg-gray-100">
@@ -764,7 +814,7 @@ h-[4.5rem] w-full rounded-none border border-white border-opacity-40 bg-white bg
         <h2 class="text-lg font-semibold mt-4 text-gray-700">Tax Breakdown</h2>
         <table class="w-full border rounded-lg overflow-hidden text-sm">
             <tbody id="taxTableBody">
-           
+
             </tbody>
         </table>
 

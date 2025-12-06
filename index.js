@@ -1,40 +1,101 @@
+(function(){
+    const toggle = document.getElementById('navToggle');
+    const menu = document.getElementById('mobileMenu');
+    const menuIcon = document.getElementById('menu-icon');
+    const closeIcon = document.getElementById('close-icon');
+
+    if (!toggle || !menu) return;
+
+    toggle.addEventListener('click', () => {
+        const isOpen = !menu.classList.contains('hidden');
+        menu.classList.toggle('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        toggle.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    // close mobile menu on outside click
+    document.addEventListener('click', (e) => {
+        if (!menu.classList.contains('hidden') && !menu.contains(e.target) && !toggle.contains(e.target)) {
+            menu.classList.add('hidden');
+            menuIcon.classList.toggle('hidden');
+            closeIcon.classList.toggle('hidden');
+            toggle.setAttribute('aria-expanded', 'false');
+        }
+    });
+
+    // close on link click (for single-page anchors)
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+        menu.classList.add('hidden');
+        menuIcon.classList.toggle('hidden');
+        closeIcon.classList.toggle('hidden');
+        toggle.setAttribute('aria-expanded', 'false');
+    }));
+})();
+
+let styleDeskBg = 'sm:bg-gray-500';
+let styleDeskBgOpacity = 'sm:bg-opacity-100';
+let styleDeskText = 'sm:text-gray-200';
+let styleMobBg = 'bg-gray-400';
+let styleMobBgOpacity = 'bg-opacity-30';
+let styleMobText = 'text-gray-500';
+
 document.addEventListener("DOMContentLoaded", function () {
     // Get all elements with the class 'nav-link'
     var navLinks = document.querySelectorAll('.nav-link');
-    document.getElementById("homeLink").classList.add("text-gray-200");
+    document.getElementById("homeLink").classList.add(styleDeskBg);
+    document.getElementById("homeLink").classList.add(styleDeskText);
+    document.getElementById("homeLink").classList.add(styleDeskBgOpacity);
+    document.getElementById("homeLinkMob").classList.add(styleMobBg);
+    document.getElementById("homeLinkMob").classList.add(styleMobText);
+    document.getElementById("homeLinkMob").classList.add(styleMobBgOpacity);
     // Add click event listener to each nav link
     navLinks.forEach(function (navLink) {
         navLink.addEventListener('click', function () {
             // Remove the 'active' class from all links
             navLinks.forEach(function (link) {
-                link.classList.remove('bg-gray-500');
-                link.classList.remove('text-gray-200');
+                link.classList.remove(styleMobBg);
+                link.classList.remove(styleMobBgOpacity);
+                link.classList.remove(styleMobText);
             });
             // Add the 'active' class to the clicked link
-            navLink.classList.add('bg-gray-500');
-            navLink.classList.add('text-gray-200');
+            navLink.classList.add(styleDeskBg)
+            navLink.classList.add(styleDeskBgOpacity)
+            navLink.classList.add(styleDeskText)
         });
     });
 });
 
 
 window.addEventListener('scroll', function () {
-
     let sections = document.querySelectorAll('section');
     let navLinks = document.querySelectorAll('nav a');
-
     sections.forEach(sec => {
         let top = window.scrollY;
         let offset = sec.offsetTop - 150;
         let height = sec.offsetHeight;
         let id = sec.getAttribute('id');
-        console.log(id)
         if (top >= offset && top < offset + height) {
-            navLinks.forEach(links => {
-                links.classList.remove('bg-gray-500');
-                links.classList.remove('text-gray-200');
-                document.querySelector('nav a[href*=' + id + ']').classList.add('bg-gray-500');
-                document.querySelector('nav a[href*=' + id + ']').classList.add('text-gray-200');
+            navLinks.forEach(link => {
+                link.classList.remove(styleDeskBg);
+                link.classList.remove(styleDeskBgOpacity);
+                link.classList.remove(styleDeskText);
+                link.classList.remove(styleMobBg);
+                link.classList.remove(styleMobBgOpacity);
+                link.classList.remove(styleMobText);
+                document.querySelectorAll(`nav a[href*="${id}"]`)
+                    .forEach(navLink => {
+                        navLink.classList.add(styleDeskBg)
+                        navLink.classList.add(styleDeskBgOpacity)
+                        navLink.classList.add(styleDeskText)
+                    });
+                document.querySelectorAll(`nav a[href*="${id}"]`)
+                    .forEach(navLink => {
+                        navLink.classList.add(styleMobBg)
+                        navLink.classList.add(styleMobBg)
+                        navLink.classList.add(styleMobBgOpacity)
+                    });
+
             });
         }
     });
