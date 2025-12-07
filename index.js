@@ -156,7 +156,6 @@ document.getElementById('yearlyBonus').addEventListener('input', function () {
 });
 
 function calculateTax() {
-    debugger;
     const monthlyIncome = parseFloat(document.getElementById('monthlyIncome').value) || 0;
     const yearlyBonus = parseFloat(document.getElementById('yearlyBonus').value) || 0;
     const yearlyTotal = monthlyIncome * 12 || 0;
