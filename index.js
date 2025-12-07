@@ -33,9 +33,12 @@
     }));
 })();
 
-let styleDeskBg = 'sm:bg-gray-500';
-let styleDeskBgOpacity = 'sm:bg-opacity-100';
-let styleDeskText = 'sm:text-gray-200';
+let styleDeskBg = 'sm:bg-gray-200';
+let styleDeskBgDark = 'dark:sm:bg-gray-500';
+let styleDeskBgOpacity = 'sm:bg-opacity-90';
+let styleDeskBgOpacityDark = 'dark:sm:bg-opacity-100';
+let styleDeskText = 'sm:text-gray-500';
+let styleDeskTextDark = 'dark:sm:text-gray-200';
 let styleMobBg = 'bg-gray-400';
 let styleMobBgOpacity = 'bg-opacity-30';
 let styleMobText = 'text-gray-500';
@@ -44,8 +47,11 @@ document.addEventListener("DOMContentLoaded", function () {
     // Get all elements with the class 'nav-link'
     var navLinks = document.querySelectorAll('.nav-link');
     document.getElementById("homeLink").classList.add(styleDeskBg);
+    document.getElementById("homeLink").classList.add(styleDeskBgDark);
     document.getElementById("homeLink").classList.add(styleDeskText);
+    document.getElementById("homeLink").classList.add(styleDeskTextDark);
     document.getElementById("homeLink").classList.add(styleDeskBgOpacity);
+    document.getElementById("homeLink").classList.add(styleDeskBgOpacityDark);
     document.getElementById("homeLinkMob").classList.add(styleMobBg);
     document.getElementById("homeLinkMob").classList.add(styleMobText);
     document.getElementById("homeLinkMob").classList.add(styleMobBgOpacity);
@@ -60,8 +66,11 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             // Add the 'active' class to the clicked link
             navLink.classList.add(styleDeskBg)
+            navLink.classList.add(styleDeskBgDark)
             navLink.classList.add(styleDeskBgOpacity)
+            navLink.classList.add(styleDeskBgOpacityDark)
             navLink.classList.add(styleDeskText)
+            navLink.classList.add(styleDeskTextDark)
         });
     });
 });
@@ -78,16 +87,22 @@ window.addEventListener('scroll', function () {
         if (top >= offset && top < offset + height) {
             navLinks.forEach(link => {
                 link.classList.remove(styleDeskBg);
+                link.classList.remove(styleDeskBgDark);
                 link.classList.remove(styleDeskBgOpacity);
+                link.classList.remove(styleDeskBgOpacityDark);
                 link.classList.remove(styleDeskText);
+                link.classList.remove(styleDeskTextDark);
                 link.classList.remove(styleMobBg);
                 link.classList.remove(styleMobBgOpacity);
                 link.classList.remove(styleMobText);
                 document.querySelectorAll(`nav a[href*="${id}"]`)
                     .forEach(navLink => {
                         navLink.classList.add(styleDeskBg)
+                        navLink.classList.add(styleDeskBgDark)
                         navLink.classList.add(styleDeskBgOpacity)
+                        navLink.classList.add(styleDeskBgOpacityDark)
                         navLink.classList.add(styleDeskText)
+                        navLink.classList.add(styleDeskTextDark)
                     });
                 document.querySelectorAll(`nav a[href*="${id}"]`)
                     .forEach(navLink => {
